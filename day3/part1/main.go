@@ -68,7 +68,7 @@ func convertBinaryToNumber(binary string) (int, error) {
 
 func main() {
 	var gammaRateBits, epsilonRateBits string
-	f, err := os.Open("input.txt")
+	f, err := os.Open("/Users/rgarimel/Documents/Programming/aoc-2021/day3/input.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
