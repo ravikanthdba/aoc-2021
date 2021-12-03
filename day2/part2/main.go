@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	var depth, horizontalPosition int
+	var aim, horizontalPosition, depth int
 	f, err := os.Open("/Users/rgarimel/Documents/Programming/aoc-2021/day2/input.txt")
 	if err != nil {
 		fmt.Println(err)
@@ -27,16 +27,18 @@ func main() {
 
 		if strings.ToLower(strings.Split(scanner.Text(), " ")[0]) == "forward" {
 			horizontalPosition += value
+			depth = depth + (aim * value)
 		}
 
 		if strings.ToLower(strings.Split(scanner.Text(), " ")[0]) == "up" {
-			depth -= value
+			aim -= value
 		}
 
 		if strings.ToLower(strings.Split(scanner.Text(), " ")[0]) == "down" {
-			depth += value
+			aim += value
 		}
+
 	}
 
-	fmt.Printf("The horizontal position is: %d\n", horizontalPosition*depth)
+	fmt.Printf("The actual position of the submarine is: %d\n", horizontalPosition*depth)
 }
